@@ -1,0 +1,12 @@
+{
+  "components": {
+    "layouts": {
+      "CHFLayout": {
+        "src": "src/layouts/CHFLayout"
+      }
+    }
+  },
+  "dependencies": {
+    "layouts": {}
+  }
+}
