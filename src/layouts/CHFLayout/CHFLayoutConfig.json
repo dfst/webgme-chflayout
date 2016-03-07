@@ -13,8 +13,8 @@
       "DEBUG_ONLY": false
     },
     {
-      "id": "VisualizerPanel",
-      "panel": "Visualizer/VisualizerPanel",
+      "id": "MainPanel",
+      "panel": "ModelEditor/ModelEditorPanel",
       "container": "center",
       "DEBUG_ONLY": false
     }
