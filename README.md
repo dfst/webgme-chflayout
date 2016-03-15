@@ -6,13 +6,13 @@ A Header-Center-Footer webgme layout with a floating panel
 CHFLayout can be added to a webgme app with:
 
 ```
-    webgme add layout CHFLayout dfst/webgme-chflayout
+webgme add layout CHFLayout dfst/webgme-chflayout
 ```
 
-Then, simply add the following to your `config/config.default.js` to use it:
+Then, set it as the default with
 
-``` javascript
-config.visualization.layout.default = 'CHFLayout';
+```
+webgme enable layout CHFLayout
 ```
 
 # Configuration
