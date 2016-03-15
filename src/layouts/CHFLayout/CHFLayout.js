@@ -2,21 +2,27 @@
 define([
     'lib/jquery/' + (DEBUG ? 'jquery.layout' : 'jquery.layout.min'),
     'js/logger',
+    'js/Utils/ComponentSettings',
     'text!./templates/CHFLayout.html',
     'text!./CHFLayoutConfig.json'
 ], function(
     _jQueryLayout,
     Logger,
+    ComponentSettings,
     defaultLayoutTemplate,
     LayoutConfigJSON
 ) {
     'use strict';
     
-    var CONFIG = JSON.parse(LayoutConfigJSON);  // TODO: Move this to a setting
+    var DEFAULT_CONFIG = JSON.parse(LayoutConfigJSON);
     var CHFLayout = function(params) {
         this._logger = (params && params.logger) || Logger.create('gme:Layouts:CHFLayout',
             WebGMEGlobal.gmeConfig.client.log);
-        this.config = this.config || CONFIG;
+
+        this.config = this.config ||
+            WebGMEGlobal.componentSettings[this.getComponentId()] ||
+            DEFAULT_CONFIG;
+
         this.panels = this.config.panels;
         this._template = (params && params.template) || defaultLayoutTemplate;
 
@@ -63,6 +69,10 @@ define([
                 }
             }
         });
+    };
+
+    CHFLayout.prototype.getComponentId = function() {
+        return 'CHFLayout';
     };
 
     /**
