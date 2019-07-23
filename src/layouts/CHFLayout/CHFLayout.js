@@ -1,6 +1,6 @@
 /*globals define, WebGMEGlobal, $ */
 define([
-    'lib/jquery/' + (DEBUG ? 'jquery.layout' : 'jquery.layout.min'),
+    './jquery.layout',
     'js/logger',
     'js/Utils/ComponentSettings',
     'text!./templates/CHFLayout.html',
